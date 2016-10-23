@@ -1,6 +1,8 @@
 package pfth.github.io.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,7 +29,10 @@ public class WebContent extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.setContentType("text/html");
+        PrintWriter printWriter  = response.getWriter();
+        printWriter.println("<h1>Hello World!</h1>");
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
